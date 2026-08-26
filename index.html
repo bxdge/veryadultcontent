@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Verification</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-primary: #ffffff;
+            --text-secondary: #aaaaaa;
+            --accent-color: #e50914; /* Netflix-style red */
+            --btn-yes-bg: #e50914;
+            --btn-yes-text: #ffffff;
+            --btn-no-bg: #333333;
+            --btn-no-text: #ffffff;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .age-gate-container {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-yes {
+            background-color: var(--btn-yes-bg);
+            color: var(--btn-yes-text);
+        }
+
+        .btn-yes:hover {
+            background-color: #f40612;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
+        }
+
+        .btn-no {
+            background-color: var(--btn-no-bg);
+            color: var(--btn-no-text);
+        }
+
+        .btn-no:hover {
+            background-color: #444444;
+            transform: translateY(-1px);
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="age-gate-container">
+        <div class="logo">STREAMX</div>
+        
+        <h1>Age Verification Required</h1>
+        <p>
+            This website contains content intended for adults only. 
+            By entering, you confirm that you are at least 18 years of age or the age of majority in your jurisdiction.
+        </p>
+
+        <div class="buttons">
+            <button class="btn-no" onclick="window.location.href='no.html'">I'm Under 18</button>
+            <button class="btn-yes" onclick="window.location.href='content.html'">I'm 18+</button>
+        </div>
+
+        <div class="disclaimer">
+            By clicking "I'm 18+", you agree to our Terms of Service and Privacy Policy.
+        </div>
+    </div>
+
+</body>
+</html>

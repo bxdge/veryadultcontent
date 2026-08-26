@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Player</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden; /* Prevents scrollbars */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Shows the WHOLE video without cropping */
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 'autoplay' and 'src' are set. 'muted' is removed for sound. -->
+    <video id="videoPlayer" autoplay controls>
+        <source src="cscwem.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Request fullscreen for the entire document (the screen), not just the video element
+        window.onload = function() {
+            var doc = document.documentElement;
+            
+            if (doc.requestFullscreen) {
+                doc.requestFullscreen();
+            } else if (doc.webkitRequestFullscreen) { /* Safari */
+                doc.webkitRequestFullscreen();
+            } else if (doc.msRequestFullscreen) { /* IE11 */
+                doc.msRequestFullscreen();
+            }
+        };
+    </script>
+
+</body>
+</html>
